@@ -242,12 +242,13 @@ if %limpia_free_length% LEQ 8 (
   set /A limpia_free_GB=%limpia-free% / 1024
 ) else (
   rem Get the first 8 characters of limpia-free
-  set limpia-free=%limpia-free:~0,8%
-  set /A limpia_free_GB=%limpia-free% / 1024
+  set limpia_free_8=%limpia-free:~0,8%
+  set /A limpia_free_GB=%limpia_free_8% / 1024
 )
 
-echo %limpia-free%
-echo %limpia_free_GB%
+echo limpia-free %limpia-free%
+echo limpia_free_8 %limpia_free_8%
+echo limpia_free_GB %limpia_free_GB%
 
 pause
 
