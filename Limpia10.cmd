@@ -358,7 +358,7 @@ REM ============       SCRIPTS                 =================================
 REM ============================================================================
 
 
-
+rem - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 :get-result-count
 FOR /F %%g IN ('"%es%" -get-result-count') do (
 	FOR /F %%h IN ('set /a %limpia10-count-init%-%%g') do (
@@ -368,7 +368,7 @@ FOR /F %%g IN ('"%es%" -get-result-count') do (
 
 exit /b
 
-
+rem - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 :calcular_espacio_libre
 echo  * Calculando espacio libre...
 for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
@@ -377,18 +377,19 @@ echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
 
-echo on
 
 setlocal enabledelayedexpansion
-rem Check if limpia_free_length is equal to or less than 8. 1073741824 ys the numbers of bytes in a gigabyte
+rem Check if limpia_free_length is equal to or less than 8. 1073741824 is the numbers of bytes in a gigabyte
 if %limpia_free_length% LEQ 8 (
-  set /A limpia_free_GB=%limpia-free% / 1073741824
+  set /A limpia_free_GB=%limpia-free% / 1024 / 1024
 ) else (
   rem Use only the first 8 characters of limpia-free
   set limpia_free_8=%limpia-free:~0,8%
-  set /A limpia_free_GB=!limpia_free_8! / 1073741824
+  rem set /A limpia_free_GB=!limpia_free_8! / 1073741824
+  set /a "gibibytes=kiblimpia_free_8 / 1024 / 1024"
+  set /a "remainder=(limpia_free_8 %% (gibibytes * 1024 * 1024)) * 100 / (gibibytes * 1024 * 1024)"
+  set limpia_free_GB=%gibibytes%.%remainder%
 )
-
 setlocal disabledelayedexpansion
 
 echo limpia-free %limpia-free%
