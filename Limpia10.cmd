@@ -230,6 +230,13 @@ FOR /F %%g IN ('"%es%" -get-total-size') do (
 if %winlive% equ yes goto 20
 echo  * Calculando espacio libre...
 for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
+
+echo %limpia-free%> "%~dp0limpia-free.txt"
+FOR %%? IN ("%~dp0limpia-free.txt") DO ( SET /A limpia-free-lenght=%%~z? - 2 )
+echo %limpia-free-lenght%
+
+pause
+
 for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
 
 
