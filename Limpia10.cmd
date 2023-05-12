@@ -12,7 +12,7 @@ echo.
 copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
 
 
-set limpia10-URL=http://ping.webhop.org:8888/Sistemas/Limpia10/
+set limpia10-URL=https://github.com/Nr2ar/Limpia10/raw/main/
 set curl="%~dp0curl.exe"
 set winlive=no
 set soywinlive=no
@@ -103,7 +103,7 @@ if %myname% equ Limpia10-update.cmd goto actualizar_definiciones
 
 :buscar_actualizaciones
 echo  * Buscando actualización...
-ping ping.webhop.org -n 1 >nul 2>&1
+ping github.com -n 1 >nul 2>&1
 if %ERRORLEVEL% EQU 1 goto verificando_requisitos
 
 IF NOT EXIST %curl% (
@@ -307,6 +307,8 @@ call :get-result-count
 
 :fin
 echo.
+
+	echo on
 
 REM ============================================================================
 REM ============       CALCULOS                =================================
