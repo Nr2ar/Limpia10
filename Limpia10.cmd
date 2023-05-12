@@ -228,35 +228,7 @@ FOR /F %%g IN ('"%es%" -get-total-size') do (
 	)
 
 if %winlive% equ yes goto 20
-echo  * Calculando espacio libre...
-for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
-
-
-echo on
-echo %limpia-free%> "%~dp0limpia-free.txt"
-FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
-del /q "%~dp0limpia-free.txt" >nul 2>&1
-
-setlocal enabledelayedexpansion
-rem Check if limpia_free_length is equal to or less than 8
-if %limpia_free_length% LEQ 8 (
-  set /A limpia_free_GB=%limpia-free% / 1024
-) else (
-  rem Get the first 8 characters of limpia-free
-  set limpia_free_8=%limpia-free:~0,8%
-  set /A limpia_free_GB=!limpia_free_8! / 1024
-)
-
-setlocal disabledelayedexpansion
-
-echo limpia-free %limpia-free%
-echo limpia_free_8 %limpia_free_8%
-echo limpia_free_GB %limpia_free_GB%
-
-pause
-
-for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
-
+call :calcular_espacio_libre
 
 REM ============================================================================
 REM ============       LIMPIEZA                =================================
@@ -396,6 +368,36 @@ FOR /F %%g IN ('"%es%" -get-result-count') do (
 
 exit /b
 
+
+:calcular_espacio_libre
+echo  * Calculando espacio libre...
+for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
+
+echo %limpia-free%> "%~dp0limpia-free.txt"
+FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
+del /q "%~dp0limpia-free.txt" >nul 2>&1
+
+setlocal enabledelayedexpansion
+rem Check if limpia_free_length is equal to or less than 8. 1073741824 ys the numbers of bytes in a gigabyte
+if %limpia_free_length% LEQ 8 (
+  set /A limpia_free_GB=%limpia-free% / 1073741824
+) else (
+  rem Use only the first 8 characters of limpia-free
+  set limpia_free_8=%limpia-free:~0,8%
+  set /A limpia_free_GB=!limpia_free_8! / 1073741824
+)
+
+setlocal disabledelayedexpansion
+
+echo limpia-free %limpia-free%
+echo limpia_free_8 %limpia_free_8%
+echo limpia_free_GB %limpia_free_GB%
+
+pause
+
+rem obsolete: for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
+
+exit /b
 
 = = = = = = = = = = = = FIN = = = = = = = = = = = = =
 
