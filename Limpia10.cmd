@@ -232,8 +232,8 @@ echo  * Calculando espacio libre...
 for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
 
 echo %limpia-free%> "%~dp0limpia-free.txt"
-FOR %%? IN ("%~dp0limpia-free.txt") DO ( SET /A limpia-free-lenght=%%~z? - 2 )
-echo %limpia-free-lenght%
+FOR %%? IN ("%~dp0limpia-free.txt") DO ( SET /A limpia-free-length=%%~z? - 2 )
+echo %limpia-free-length%
 
 pause
 
