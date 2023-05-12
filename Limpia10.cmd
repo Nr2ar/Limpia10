@@ -236,7 +236,7 @@ echo on
 echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia-free-length=%%~z? - 2")
 echo %limpia-free-length%
-
+del /y "%~dp0limpia-free.txt" >nul 2>&1
 
 pause
 
