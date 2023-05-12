@@ -156,7 +156,7 @@ exit
 
 :actualizar_definiciones
 for  %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
-	%curl% -s -o "%~dp0%%a" %limpia10-URL%%%a
+	%curl% -o "%~dp0%%a" %limpia10-URL%%%a
 )
 
 
