@@ -235,6 +235,7 @@ echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO ( SET /A limpia-free-length=%%~z? - 2 )
 echo %limpia-free-length%
 
+
 pause
 
 for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
