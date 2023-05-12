@@ -12,7 +12,7 @@ echo.
 copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
 
 
-set limpia10-URL=https://github.com/Nr2ar/Limpia10/raw/main/
+set limpia10-URL=https://raw.githubusercontent.com/Nr2ar/Limpia10/main/
 set curl="%~dp0curl.exe"
 set winlive=no
 set soywinlive=no
