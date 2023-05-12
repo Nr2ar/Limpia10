@@ -237,14 +237,17 @@ echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
 
+setlocal enabledelayedexpansion
 rem Check if limpia_free_length is equal to or less than 8
 if %limpia_free_length% LEQ 8 (
   set /A limpia_free_GB=%limpia-free% / 1024
 ) else (
   rem Get the first 8 characters of limpia-free
   set limpia_free_8=%limpia-free:~0,8%
-  set /A limpia_free_GB=%limpia_free_8% / 1024
+  set /A limpia_free_GB=!limpia_free_8! / 1024
 )
+
+setlocal disabledelayedexpansion
 
 echo limpia-free %limpia-free%
 echo limpia_free_8 %limpia_free_8%
