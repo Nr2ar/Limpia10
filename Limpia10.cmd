@@ -3,9 +3,12 @@ prompt $$
 chcp 65001
 cls
 
-Title Limpia10 - Beta
+REM Que version soy?
+for %%F in ("%~f0") do set "fileSize=%%~zF"
+
+Title Limpia10 - Version %fileSize%
 echo.
-echo Limpia 10 (BETA)
+echo Limpia 10 (%fileSize%)
 echo ----------------
 echo.
 
@@ -21,6 +24,10 @@ set myname=%~nx0
 if %COMPUTERNAME% equ MINWINPC (
 	set winlive=yes
 )
+
+
+
+
 
 REM ============================================================================
 REM ============       PARAMETROS?             =================================
