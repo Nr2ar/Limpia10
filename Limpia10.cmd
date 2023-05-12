@@ -234,7 +234,7 @@ for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%
 
 echo on
 echo %limpia-free%> "%~dp0limpia-free.txt"
-FOR %%? IN (limpia-free.txt) DO ( SET /A limpia-free-length=%%~z? - 2 )
+FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia-free-length=%%~z? - 2")
 echo %limpia-free-length%
 
 
