@@ -378,6 +378,15 @@ for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/107374
 
 echo limpia-free %limpia-free%
 
+exit /b
+
+= = = = = = = = = = = = FIN = = = = = = = = = = = = =
+
+
+
+exit /b
+No me funcionó :[
+
 echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
@@ -398,12 +407,4 @@ set limpia_free_GB=%gibibytes%.%remainder%
 echo limpia-free %limpia-free%
 echo limpia_free_8 %limpia_free_8%
 echo limpia_free_GB+remainder %limpia_free_GB%
-
-pause
-
-
-
-exit /b
-
-= = = = = = = = = = = = FIN = = = = = = = = = = = = =
 
