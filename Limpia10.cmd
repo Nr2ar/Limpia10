@@ -378,10 +378,6 @@ for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/107374
 
 echo limpia-free %limpia-free%
 
-pause
-
-
-
 echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
