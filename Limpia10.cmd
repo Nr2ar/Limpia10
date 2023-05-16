@@ -384,7 +384,7 @@ if %limpia_free_length% LEQ 8 (
   set limpia_free_8=%limpia-free%
 ) else (
   rem Use only the first 8 characters of limpia-free
-  set limpia_free_8=%limpia-free:~0,8%
+  set limpia_free_8=%limpia-free:~0,9%
 )
 
 set /a "gibibytes=limpia_free_8 / 1024 / 1024"
