@@ -1,5 +1,5 @@
 rem @echo off                           
-
+echo on
 
 
 
