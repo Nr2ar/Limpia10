@@ -21,7 +21,7 @@ copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
 
 
 set limpia10-URL=https://raw.githubusercontent.com/Nr2ar/Limpia10/main/
-set curl="%~dp0curl.exe"
+set curl="%~dp0curl.exe" -H "Cache-Control: no-cache, no-store"
 set winlive=no
 set soywinlive=no
 set forzar_winlive=no
@@ -119,7 +119,7 @@ echo  * Buscando actualización...
 ping github.com -n 1 >nul 2>&1
 if %ERRORLEVEL% EQU 1 goto verificando_requisitos
 
-IF NOT EXIST %curl% (
+IF NOT EXIST "%~dp0curl.exe" (
 	echo     - Se requiere curl.exe para actualizar
 	goto verificando_requisitos
 )
