@@ -220,7 +220,7 @@ REM ============================================================================
 :10
 rem Preparaciones
 FOR /F %%g IN ('"%es%" -get-result-count') do (
-	title Limpia10 - Beta - Archivos: %%g
+	title Limpia10 (v%fileSize%) - Archivos: %%g
 	set limpia10-count-init=%%g
 	)
 
@@ -363,7 +363,7 @@ rem - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 :get-result-count
 FOR /F %%g IN ('"%es%" -get-result-count') do (
 	FOR /F %%h IN ('set /a %limpia10-count-init%-%%g') do (
-		title Limpia10 - Borrados: %%h de %limpia10-count-init%
+		title Limpia10 (v%fileSize%) - Borrados: %%h de %limpia10-count-init%
 		)
 	)
 
