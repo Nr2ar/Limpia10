@@ -109,6 +109,7 @@ rem Ya estoy actualizado?
 if %myname% equ Limpia10-update.cmd goto actualizar_definiciones
 
 :buscar_actualizaciones
+echo.
 echo  * Buscando actualización...
 ping github.com -n 1 >nul 2>&1
 if %ERRORLEVEL% EQU 1 goto verificando_requisitos
@@ -377,7 +378,7 @@ echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
 
-
+echo on
 setlocal enabledelayedexpansion
 rem Check if limpia_free_length is equal to or less than 8. 1073741824 is the numbers of bytes in a gigabyte
 if %limpia_free_length% LEQ 8 (
