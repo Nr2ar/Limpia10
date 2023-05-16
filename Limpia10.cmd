@@ -1,4 +1,4 @@
-@echo off
+rem @echo off
 prompt $$ 
 chcp 65001
 cls
