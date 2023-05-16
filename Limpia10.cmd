@@ -374,6 +374,14 @@ rem - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 echo  * Calculando espacio libre...
 for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%systemdrive%'" get FreeSpace /format:value`) do set limpia-free=%%a
 
+for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
+
+echo limpia-free %limpia-free%
+
+pause
+
+
+
 echo %limpia-free%> "%~dp0limpia-free.txt"
 FOR %%? IN ("%~dp0limpia-free.txt") DO (SET /A "limpia_free_length=%%~z? - 2")
 del /q "%~dp0limpia-free.txt" >nul 2>&1
@@ -397,7 +405,7 @@ echo limpia_free_GB+remainder %limpia_free_GB%
 
 pause
 
-rem obsolete: for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
+
 
 exit /b
 
