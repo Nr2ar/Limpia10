@@ -376,8 +376,6 @@ for /f "usebackq delims== tokens=2" %%a in (`wmic logicaldisk where "DeviceID='%
 
 for /f "delims=" %%a in ('powershell -Command [Math]::Round(%limpia-free%/1073741824^,2^)') do @set limpia-free=%%a
 
-echo limpia-free %limpia-free%
-
 exit /b
 
 = = = = = = = = = = = = FIN = = = = = = = = = = = = =
