@@ -8,7 +8,7 @@ for %%F in ("%~f0") do set "fileSize=%%~zF"
 
 Title Limpia10 - Version %fileSize%
 echo.
-echo Limpia 10 (%fileSize%)
+echo Limpia 10 v%fileSize%
 echo ----------------
 echo.
 
