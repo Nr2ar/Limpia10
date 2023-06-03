@@ -67,4 +67,4 @@ NVIDIA\DXCache
 NVIDIA\GLCache
 ?:\adwcleaner
 *ProgramData\Adobe\ARM\Reader_*
-AMD\??Cache
+*AMD\??Cache*
