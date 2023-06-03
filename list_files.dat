@@ -3,6 +3,7 @@
 *.hdmp
 *.mdmp
 hs_err_*.*
+LMI????????.log
 *ESET*\em*.bak
 *Recent\*(?).lnk
 *Recent\*(??).lnk
