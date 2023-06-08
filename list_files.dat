@@ -19,3 +19,4 @@ DropboxUpdate.log*
 \iVMS-4200 AC\UserData\Log\
 \spool\printers\
 BrowserMetrics-*.pma
+replay_pid*.log
