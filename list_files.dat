@@ -20,3 +20,5 @@ DropboxUpdate.log*
 \spool\printers\
 BrowserMetrics-*.pma
 replay_pid*.log
+setuperr.log
+setupact.log
