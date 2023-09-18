@@ -9,6 +9,7 @@ $Windows.~WS
 $WINREAgent
 Temporary?Internet?Files
 *Users*\Local\Temp
+*default-release
 *Chrome*\Cache
 *Chrome*\Service?Worker
 *Chrome*\Code?Cache
