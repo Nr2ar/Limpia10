@@ -22,3 +22,4 @@ BrowserMetrics-*.pma
 replay_pid*.log
 setuperr.log
 setupact.log
+*\updates\downloading\*.tmp
