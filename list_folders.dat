@@ -42,11 +42,11 @@ Temporary?Internet?Files
 *Teams*\IndexedDB
 *AppData\Local*\cache2
 *AppData\Local\sut
+EO.WebBrowser.Cache
+WebView2.Cache
 Spotify\Browser
 Spotify\Data
 Spotify\Storage
-tw-*.tmp
-WebView2.Cache
 Microsoft\OneDrive\logs
 Windows\Temp
 *Windows*\WER
@@ -74,3 +74,4 @@ Sun\Java\Deployment\cache
 AAMUpdater
 Acrobat\Cache
 OICE_*
+tw-*.tmp
