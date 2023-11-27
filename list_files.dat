@@ -23,5 +23,4 @@ replay_pid*.log
 setuperr.log
 setupact.log
 *\updates\downloading\*.tmp
-edb*.log
 tw-*.tmp
