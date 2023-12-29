@@ -243,7 +243,6 @@ echo  * Borrando carpetas...
 for /f "usebackq tokens=*" %%f in ("%~dp0list_folders.dat") do (
     echo      - %%f
         FOR /f "tokens=*" %%A IN ('%es% -w -i -sort path-ascending folder:%%f %param_drive%') DO (
-            echo %%A
 			rmdir /S /Q "%%A" >nul 2>&1
 			call :get-result-count
             )
