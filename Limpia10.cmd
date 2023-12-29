@@ -244,12 +244,14 @@ for /f "usebackq tokens=*" %%f in ("%~dp0list_folders.dat") do (
     echo      - %%f
         FOR /f "tokens=*" %%A IN ('%es% -w -i -sort path-ascending folder:%%f %param_drive%') DO (
             echo %%A
-			for /d %%x in ("%%A..\") do echo rd /s /q "%%x"
-			pause
 			rmdir /S /Q "%%A" >nul 2>&1
 			call :get-result-count
             )
     )
+
+
+rem for /d %%x in ("%%A..\") do echo rd /s /q "%%x"
+
 
 
 echo.
