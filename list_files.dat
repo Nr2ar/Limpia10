@@ -26,4 +26,5 @@ setupact.log
 DisplaySessionContainer*.log*
 dumpstack.log*
 __rar_?.*
+~WRL*.tmp
 tw-*.tmp
