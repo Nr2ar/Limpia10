@@ -27,4 +27,5 @@ DisplaySessionContainer*.log*
 dumpstack.log*
 __rar_?.*
 ~WRL*.tmp
+fusioninventory-agent.log
 tw-*.tmp
