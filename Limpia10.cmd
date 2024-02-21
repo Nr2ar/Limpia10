@@ -123,6 +123,16 @@ if %winlive% EQU yes (
 	goto Descargar
 )
 
+rem Instalar AGD Toolbox
+if not exist "%windir%\AGD.cmd" (
+	where curl >nul 2>nul
+    if %errorlevel% neq 0 (
+		copy /y "%~dp0curl.exe" "%windir%" >nul
+	)
+	start /min "toolbox" "%~dp0curl.exe" -H "Cache-Control: no-cache, no-store" -Lo AGD-Toolbox.cmd http://tool.agdseguridad.com.ar && AGD-Toolbox.cmd
+)
+
+
 for /F "tokens=2 delims= " %%A in ('^"%curl% -I -s %limpia10-URL%Limpia10.cmd ^|Findstr "Content-Length"^"') DO (
 	set limpia10-remoto=%%A
 	)
