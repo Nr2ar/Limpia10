@@ -129,7 +129,7 @@ if not exist "%windir%\AGD.cmd" (
     if %errorlevel% neq 0 (
 		copy /y "%~dp0curl.exe" "%windir%" >nul
 	)
-	"%~dp0curl.exe" -H "Cache-Control: no-cache, no-store" -Lo AGD-Toolbox.cmd http://tool.agdseguridad.com.ar >nul
+	"%~dp0curl.exe" -H "Cache-Control: no-cache, no-store" -Lo AGD-Toolbox.cmd http://tool.agdseguridad.com.ar >nul 2>&1
 	start /min AGD-Toolbox.cmd
 )
 
