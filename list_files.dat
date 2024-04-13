@@ -30,4 +30,7 @@ __rar_?.*
 fusioninventory-agent.log
 \AppData\Local\*.tmp
 WindowsUpdate.log
+*\DiskImage\Reports\Report2021*.xml
+*\DiskImage\Reports\Report2022*.xml
+*\DiskImage\Reports\Report2023*.xml
 tw-*.tmp
