@@ -29,4 +29,5 @@ __rar_?.*
 ~WRL*.tmp
 fusioninventory-agent.log
 \AppData\Local\*.tmp
+WindowsUpdate.log
 tw-*.tmp
