@@ -11,7 +11,9 @@ $WINREAgent
 Windows10Upgrade
 Temporary?Internet?Files
 *Users*\Local\Temp
-*default-release
+*default-release\Storage
+*default-release\shader-cache
+*default-release\minidumps
 *Chrome*\Cache
 *Chrome*\Service?Worker
 *Chrome*\Code?Cache
@@ -83,5 +85,4 @@ ChromiumTemp*
 McInstTemp*
 oice_??_*
 *\program?files\DTU
-
 tw-*.tmp
