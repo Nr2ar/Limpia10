@@ -81,8 +81,9 @@ AAMUpdater
 Acrobat\Cache
 OICE_*
 System32\SleepStudy
-$AV_ASW
 ChromiumTemp*
+chrome_ComponentUnpacker_BeginUnzipping*
+chrome_url_fetcher_*
 McInstTemp*
 oice_??_*
 *\program?files\DTU
