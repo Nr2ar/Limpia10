@@ -37,4 +37,5 @@ WindowsUpdate.log
 *\DiskImage\Reports\Report2023*.xml
 ~wr*.*
 Sin?confirmar*.crdownload
+*\Windows\Logs\CbsPersist_*.*
 tw-*.tmp
