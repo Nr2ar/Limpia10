@@ -63,6 +63,7 @@ Windows\Logs\CBS
 Windows\servicing\Sessions
 Windows\$NtUninstall
 Windows\assembly\temp
+Windows\System32\config\systemprofile\AppData\Local\Packages\sut
 DeliveryOptimization\Cache
 $PatchCache$
 DRPSu
