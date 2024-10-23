@@ -60,7 +60,6 @@ Windows\LiveKernelReports
 Windows\INetCache
 Windows\WebCache
 Windows\Logs\CBS
-Windows\servicing\Sessions
 Windows\$NtUninstall
 Windows\assembly\temp
 Windows\System32\config\systemprofile\AppData\Local\Packages\sut
