@@ -15,8 +15,7 @@ Temporary?Internet?Files
 *default-release\shader-cache
 *default-release\minidumps
 ChromiumTemp*
-chrome_ComponentUnpacker_BeginUnzipping*
-chrome_url_fetcher_*
+chrome_*_*_*
 *Chrome*\Cache
 *Chrome*\Service?Worker
 *Chrome*\Code?Cache
