@@ -39,4 +39,6 @@ WindowsUpdate.log
 Sin?confirmar*.crdownload
 CbsPersist_*.*
 *\Adobe\Acrobat\DC\ConnectorIcons\*.bmp
+iconcache_*.db
+thumbcache_*.db
 tw-*.tmp
