@@ -1,0 +1,5 @@
+hiberfil.sys
+pagefile.sys
+swapfile.sys
+iconcache_*.db
+thumbcache_*.db
