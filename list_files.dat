@@ -4,6 +4,7 @@
 *.mdmp
 hs_err_*.*
 LMI????????.log
+\Temp*.
 *ESET*\em*.bak
 *Recent\*(?).lnk
 *Recent\*(??).lnk
