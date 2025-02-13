@@ -42,5 +42,7 @@ CbsPersist_*.*
 *\Adobe\Acrobat\DC\ConnectorIcons\*.bmp
 iconcache_*.db
 thumbcache_*.db
+*.odl
+*.odlgz
 tw-*.tmp
 WinPEpge.sys
