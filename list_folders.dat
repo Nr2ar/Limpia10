@@ -88,6 +88,7 @@ oice_??_*
 *\program?files\DTU
 Windows\dwrcs\Uploads
 Windows\dwrcs\sft
-Windows\Logs\DPX\
+Windows\Logs\DPX
 HandBrake\logs
+*.netflix*\offlineinfo
 tw-*.tmp
