@@ -93,4 +93,5 @@ Windows\servicing\LCU
 Windows\Panther
 HandBrake\logs
 *.netflix*\offlineinfo
+stremio-cache
 tw-*.tmp
