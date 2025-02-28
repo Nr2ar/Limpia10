@@ -92,6 +92,5 @@ stremio-cache
 Windows\dwrcs\Uploads
 Windows\dwrcs\sft
 Windows\Logs\DPX
-tw-*.tmp
 Windows\Panther
-Windows\servicing\LCU
+tw-*.tmp
