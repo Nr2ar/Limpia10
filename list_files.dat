@@ -45,5 +45,6 @@ iconcache_*.db
 thumbcache_*.db
 *.odl
 *.odlgz
+*\Windows\Logs\*.log
 tw-*.tmp
 WinPEpge.sys
