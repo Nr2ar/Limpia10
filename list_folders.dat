@@ -89,6 +89,7 @@ oice_??_*
 HandBrake\logs
 *.netflix*\offlineinfo
 stremio-cache
+\Temporary?ASP.NET?Files\
 Windows\dwrcs\Uploads
 Windows\dwrcs\sft
 Windows\Logs\DPX
