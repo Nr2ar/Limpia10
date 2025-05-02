@@ -40,8 +40,8 @@ WindowsUpdate.log
 ~wr*.*
 Sin?confirmar*.crdownload
 CbsPersist_*.*
-iconcache_*.db
-thumbcache_*.db
+iconcache*.db
+thumbcache*.db
 *.odl
 *.odlgz
 *\Windows\Logs\*.log
