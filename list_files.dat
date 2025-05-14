@@ -46,5 +46,6 @@ thumbcache*.db
 *.odlgz
 *\Windows\Logs\*.log
 rdpguard-svc-*-log.txt
+*\Powertoys\*Log_*.txt
 tw-*.tmp
 WinPEpge.sys
