@@ -44,6 +44,7 @@ iconcache*.db
 thumbcache*.db
 *.odl
 *.odlgz
+*\Windows\*.log
 *\Windows\Logs\*.log
 rdpguard-svc-*-log.txt
 *\Powertoys\*Log_*.txt
