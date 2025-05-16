@@ -180,6 +180,8 @@ exit
 exit
 
 :actualizar_definiciones
+echo on
+
 set "download_failed=0"
 
 for %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
