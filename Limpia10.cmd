@@ -109,6 +109,8 @@ REM ============================================================================
 rem Ya estoy actualizado?
 if %myname% equ Limpia10-update.cmd goto actualizar_definiciones
 
+echo on
+
 :buscar_actualizaciones
 echo.
 echo  * Buscando actualización...
@@ -182,7 +184,6 @@ exit
 :actualizar_definiciones
 for  %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
 	%curl% -s -o "%~dp0%%a.new" %limpia10-URL%%%a
-	
 )
 
 :actualizar_definiciones
@@ -207,7 +208,7 @@ for %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_liv
 
     rem Si todo está OK, reemplazar archivo anterior
     move /Y "%~dp0%%a.new" "%~dp0%%a" >nul 2>&1
-    
+
     :continue_loop
 )
 
