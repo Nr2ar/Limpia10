@@ -193,13 +193,13 @@ for %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_liv
 
     rem Verificar si el archivo fue descargado correctamente y no está vacío
     if not exist "%~dp0%%a.new" (
-        echo     - Error al descargar %%a (archivo no encontrado)
+        echo     - Error al descargar %%a -archivo no encontrado-
         set "download_failed=1"
         goto :continue_loop
     )
 
     for %%b in ("%~dp0%%a.new") do if %%~zB equ 0 (
-        echo     - Error al descargar %%a (archivo vacío)
+        echo     - Error al descargar %%a -archivo vacio-
 		del "%~dp0%%a.new" >nul 2>&1
         set "download_failed=1"
         goto :continue_loop
