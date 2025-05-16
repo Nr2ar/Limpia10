@@ -109,8 +109,6 @@ REM ============================================================================
 rem Ya estoy actualizado?
 if %myname% equ Limpia10-update.cmd goto actualizar_definiciones
 
-echo on
-
 :buscar_actualizaciones
 echo.
 echo  * Buscando actualización...
@@ -180,11 +178,6 @@ timeout 1 >nul 2>&1
 start "Limpia10-update" /I "%~dp0Limpia10-update.cmd" %*
 exit
 exit
-
-:actualizar_definiciones
-for  %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
-	%curl% -s -o "%~dp0%%a.new" %limpia10-URL%%%a
-)
 
 :actualizar_definiciones
 set "download_failed=0"
