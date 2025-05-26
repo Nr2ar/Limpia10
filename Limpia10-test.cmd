@@ -12,9 +12,6 @@ echo Limpia 10 v%fileSize%
 echo ----------------
 echo.
 
-copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
-
-
 set limpia10-URL=https://raw.githubusercontent.com/Nr2ar/Limpia10/main/
 set curl="%~dp0curl.exe" -H "Cache-Control: no-cache, no-store" --fail --show-error
 set winlive=no
@@ -23,6 +20,10 @@ set forzar_winlive=no
 set myname=%~nx0
 if %COMPUTERNAME% equ MINWINPC (
 	set winlive=yes
+)
+
+if %myname% equ Limpia10-update.cmd (
+	copy /Y "%~dp0%~n0-update.cmd" "%~dp0%~n0.cmd" >nul 2>&1
 )
 
 setlocal enabledelayedexpansion
@@ -167,6 +168,7 @@ if not exist "%~dp0Limpia10-update.cmd" (
 )
 for %%A in ("%~dp0Limpia10-update.cmd") do if %%~zA equ 0 (
     echo     - Error al descargar -archivo vacio-
+	del "%~dp0Limpia10-update.cmd" >nul 2>&1
     goto verificando_requisitos
 )
 
