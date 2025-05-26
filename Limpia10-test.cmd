@@ -12,11 +12,8 @@ echo Limpia 10 v%fileSize%
 echo ----------------
 echo.
 
-copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
-
-
 set limpia10-URL=https://raw.githubusercontent.com/Nr2ar/Limpia10/main/
-set curl="%~dp0curl.exe" -H "Cache-Control: no-cache, no-store"
+set curl="%~dp0curl.exe" -H "Cache-Control: no-cache, no-store" --fail --show-error
 set winlive=no
 set soywinlive=no
 set forzar_winlive=no
@@ -25,8 +22,13 @@ if %COMPUTERNAME% equ MINWINPC (
 	set winlive=yes
 )
 
+if %myname% equ Limpia10-update.cmd (
+	copy /Y "%~dp0%~n0-update.cmd" "%~dp0%~n0.cmd" >nul 2>&1
+)
 
-
+setlocal enabledelayedexpansion
+rem Get a Carriage Return (Ascii 13) in CR variable:
+for /F %%a in ('copy /Z "%~F0" NUL') do set "CR=%%a"
 
 
 REM ============================================================================
@@ -159,9 +161,15 @@ rem Descargar
 del /F /Q "%~dpnx0.2" >nul 2>&1
 del /F /Q "%~dp0Limpia10-update.cmd" >nul 2>&1
 %curl% -s -o "%~dp0Limpia10-update.cmd" %limpia10-URL%Limpia10.cmd
+
 if not exist "%~dp0Limpia10-update.cmd" (
 	echo     - Error al descargar
 	goto verificando_requisitos
+)
+for %%A in ("%~dp0Limpia10-update.cmd") do if %%~zA equ 0 (
+    echo     - Error al descargar -archivo vacio-
+	del "%~dp0Limpia10-update.cmd" >nul 2>&1
+    goto verificando_requisitos
 )
 
 rem Cargar version nueva
@@ -174,9 +182,41 @@ exit
 exit
 
 :actualizar_definiciones
-for  %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
-	%curl% -s -o "%~dp0%%a" %limpia10-URL%%%a
+echo on
+
+set download_failed=0
+
+for %%a in (list_files.dat list_folders.dat list_files_live.dat list_folders_live.dat) do (
+    %curl% -o "%~dp0%%a.new" %limpia10-URL%%%a
+
+    rem Verificar si el archivo fue descargado correctamente y no está vacío
+    if not exist "%~dp0%%a.new" (
+        echo     - Error al descargar %%a -archivo no encontrado-
+        set "download_failed=1"
+        goto :continue_loop
+    )
+
+    for %%b in ("%~dp0%%a.new") do if %%~zB equ 0 (
+        echo     - Error al descargar %%a -archivo vacio-
+		del "%~dp0%%a.new" >nul 2>&1
+        set "download_failed=1"
+        goto :continue_loop
+    )
+
+    rem Si todo está OK, reemplazar archivo anterior
+    move /Y "%~dp0%%a.new" "%~dp0%%a" >nul 2>&1
+
+    :continue_loop
 )
+
+rem Si hubo algún error en la descarga
+if %download_failed%==1 (
+    echo Al menos un archivo no se pudo descargar correctamente.
+    goto verificando_requisitos
+)
+
+goto :eof
+
 
 
 REM ============================================================================
@@ -420,4 +460,5 @@ set limpia_free_GB=%gibibytes%.%remainder%
 echo limpia-free %limpia-free%
 echo limpia_free_8 %limpia_free_8%
 echo limpia_free_GB+remainder %limpia_free_GB%
+
 
