@@ -48,5 +48,7 @@ thumbcache*.db
 *\Windows\Logs\*.log
 rdpguard-svc-*-log.txt
 *\Powertoys\*Log_*.txt
+launcher-log_*.txt
+runner-log_*.txt
 tw-*.tmp
 WinPEpge.sys
