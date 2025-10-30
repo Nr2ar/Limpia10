@@ -1,0 +1,27 @@
+{
+    "remotePath": "/Limpia10",
+    "host": "ping.webhop.org",
+    "username": "AGD-Nicolas",
+    "password": "EsteFTP666!!",
+    "port": 43323,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": true,
+    "debug": false,
+    "privateKeyPath": null,
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "extensionsToInclude": [
+            ""
+        ],
+        "path": ""
+    }
+}

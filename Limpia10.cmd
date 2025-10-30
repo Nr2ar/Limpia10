@@ -6,7 +6,7 @@ cls
 REM Que version soy?
 for %%F in ("%~f0") do set "fileSize=%%~zF"
 
-Title Limpia10 - Version %fileSize%
+Title Limpia10 - Version %fileSize% PING
 echo.
 echo Limpia 10 v%fileSize%
 echo ----------------
@@ -15,7 +15,7 @@ echo.
 copy /Y "%~dp0Limpia10-update.cmd" "%~dp0Limpia10.cmd" >nul 2>&1
 
 
-set limpia10-URL=https://raw.githubusercontent.com/Nr2ar/Limpia10/main/
+set limpia10-URL=http://ping.webhop.org:8888/Sistemas/Limpia10/
 set curl="%~dp0curl.exe" -H "Cache-Control: no-cache, no-store"
 set winlive=no
 set soywinlive=no
@@ -420,5 +420,4 @@ set limpia_free_GB=%gibibytes%.%remainder%
 echo limpia-free %limpia-free%
 echo limpia_free_8 %limpia_free_8%
 echo limpia_free_GB+remainder %limpia_free_GB%
-
 

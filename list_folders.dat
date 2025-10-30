@@ -86,8 +86,14 @@ System32\SleepStudy
 McInstTemp*
 oice_??_*
 *\program?files\DTU
+HandBrake\logs
+*.netflix*\offlineinfo
+stremio-cache
+\Temporary?ASP.NET?Files\
 Windows\dwrcs\Uploads
 Windows\dwrcs\sft
-Windows\Logs\DPX\
-HandBrake\logs
+Windows\Logs\DPX
+Windows\Panther
+\Adobe\Acrobat\DC\ConnectorIcons\
+\LocalState\AppIconCache\
 tw-*.tmp

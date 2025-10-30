@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	symlinks = false
+	ignorecase = true
+[remote "Limpia10"]
+	url = https://github.com/Nr2ar/Limpia10.git
+	fetch = +refs/heads/*:refs/remotes/Limpia10/*
