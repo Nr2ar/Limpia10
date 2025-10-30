@@ -24,6 +24,8 @@ chrome_*_*_*
 *Chrome*\GrShaderCache
 *Chrome*\IndexedDB
 *chrome_BITS_*
+*chrome_url_fetcher_*
+*chrome_Unpacker_*
 *Chrome*\Pepper?Data
 *Edge*\Cache
 *Edge*\Service?Worker
@@ -96,4 +98,5 @@ Windows\Logs\DPX
 Windows\Panther
 \Adobe\Acrobat\DC\ConnectorIcons\
 \LocalState\AppIconCache\
+*WhatsAppDesktop_*\LocalState\shared
 tw-*.tmp
