@@ -50,5 +50,6 @@ rdpguard-svc-*-log.txt
 *\Powertoys\*Log_*.txt
 launcher-log_*.txt
 runner-log_*.txt
+CrashClient.log.*
 tw-*.tmp
 WinPEpge.sys
