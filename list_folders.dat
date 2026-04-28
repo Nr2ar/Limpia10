@@ -68,6 +68,7 @@ Windows\Logs\CBS
 Windows\$NtUninstall
 Windows\assembly\temp
 Windows\System32\config\systemprofile\AppData\Local\Packages\sut
+Windows\Panther\monitor
 DeliveryOptimization\Cache
 $PatchCache$
 DRPSu
@@ -101,4 +102,6 @@ Windows\Panther
 \Adobe\Acrobat\DC\ConnectorIcons\
 \LocalState\AppIconCache\
 *WhatsAppDesktop_*\LocalState\shared
+MSTeams_*\LocalCache\Microsoft\MSTeams\Logs
+LAN Messenger\LAN Messenger\logs
 tw-*.tmp
