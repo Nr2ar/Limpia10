@@ -27,6 +27,8 @@ chrome_*_*_*
 *chrome_url_fetcher_*
 *chrome_Unpacker_*
 *Chrome*\Pepper?Data
+chromecrx_chrome_Unpacker_BeginUnzipping*
+OptGuideOnDeviceModel
 *Edge*\Cache
 *Edge*\Service?Worker
 *Edge*\Code?Cache
