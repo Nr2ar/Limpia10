@@ -35,7 +35,9 @@ OptGuideOnDeviceModel
 *Edge*\Old?Cache*
 *Edge*\GPUCache
 *Edge*\GrShaderCache
+*Edge_BITS_*
 *Edge*\IndexedDB
+*msedge_url_fetcher_*
 *Opera*\Cache
 *Opera*\Service?Worker
 *Opera*\Code?Cache
