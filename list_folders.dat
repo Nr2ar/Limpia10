@@ -106,4 +106,5 @@ Windows\Panther
 *WhatsAppDesktop_*\LocalState\shared
 MSTeams_*\LocalCache\Microsoft\MSTeams\Logs
 LAN?Messenger\logs
+RdpGuard\logs
 tw-*.tmp
